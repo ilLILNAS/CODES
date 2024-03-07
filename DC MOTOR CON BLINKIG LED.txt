@@ -1,0 +1,22 @@
+DC MOTOR CON
+BLINKING LED
+
+const int motorPin = 9;   // Pin per il controllo del motore DC
+const int ledPin = 13;    // Pin per il controllo del LED
+
+void setup() {
+  pinMode(motorPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  // Accende il motore e il LED per 1 secondo
+  digitalWrite(motorPin, HIGH);
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+
+  // Spegne il motore e il LED per 1 secondo
+  digitalWrite(motorPin, LOW);
+  digitalWrite(ledPin, LOW);
+  delay(1000);
+}

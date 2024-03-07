@@ -1,0 +1,22 @@
+DC MOTOR COMANDATO DAL MONITOR 
+
+const int motorPin = 9;   // Pin per il controllo del motore DC
+
+void setup() {
+  pinMode(motorPin, OUTPUT);
+  Serial.begin(9600);  // Inizializza la comunicazione seriale a 9600 baud
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char command = Serial.read();  // Legge il comando seriale
+    if (command == '1') {
+      // Avvia il motore
+      digitalWrite(motorPin, HIGH);
+    } else if (command == '0') {
+      // Spegni il motore
+      digitalWrite(motorPin, LOW);
+    }
+  }
+}
+
